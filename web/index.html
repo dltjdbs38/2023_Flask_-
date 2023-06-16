@@ -4,8 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>옷 추천 및 찜하기</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <link src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 </head>
-<body>
-    
+<body ng-app="clothesApp" style="background-color:#EBEBEB">
+    <style>
+        @media (max-width: 800px){
+            img {
+                max-width: 300px;
+            }
+        }
+    </style>
+    <br> 줄바꿈
+    <div style="text-align: center">
+        <img src="Greenda.gif"
+            width="300px" height="200px" align="center">
+    </div>
+    <div class="container">
+        <div id="clothesGrid" class="row" ng-controller="clothesListController">
+            <div class="col-md-4 border border-warning" ng-repeat="clothe in clothes">
+                <br> ng-repeat에서 clothe가 반복됨.
+                <p align="center">
+                    <strong>{{ clothe.name }}</strong>
+                    <br>
+                    <img src="{{ clothe.thumbImageUri }}" alt="{{ clothe.Name }}">
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </body>
 </html>
